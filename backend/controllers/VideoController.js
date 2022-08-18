@@ -1,3 +1,4 @@
+import PlaylistModel from "../models/PlaylistModel.js"
 import VideoModel from "../models/VideoModel.js"
 
 export const getAllVideos = async (req, res) => {
@@ -37,7 +38,7 @@ export const getPlaylistVideos = async (req, res) => {
         INNER JOIN playlistvideos ON videos.videoID = playlistvideos.videoID
         INNER JOIN playlists ON playlistvideos.playlistID = playlists.playlistID
         WHERE playlists.playlistName = '${req.params.id}'`)
-        res.json(videos[0])
+        res.json(videos[0]) 
     } catch (error) {
         res.json({ message: error.message })
     }

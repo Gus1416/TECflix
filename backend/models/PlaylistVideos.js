@@ -5,19 +5,18 @@ import VideoModel from "./VideoModel.js";
 
 const PlaylistVideos = db.define('playlistvideos', {
     playlistID: { 
-        type: NUMBER,
+        type: NUMBER/* ,
         references: {
             model: PlaylistModel,
-            key: PlaylistModel.playlistID
-        } 
-    },
+            key: PlaylistModel.playlistID */
+        } ,
     videoID: {
-        type: STRING,
+        type: STRING/* ,
         references: {
             model: VideoModel,
-            key: VideoModel.videoID
-        }
+            key: VideoModel.videoID */
     }
+    
 })
 
 export default PlaylistVideos
